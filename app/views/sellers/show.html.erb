@@ -1,0 +1,15 @@
+
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @seller.first_name %>
+    <%= @seller.last_name %>
+  </h1>
+  <p class="lead">
+    <%= @seller.phone %> |
+    <%= @seller.email %>  |
+    <%= @seller.product_description %>  | 
+  </p>
+  <hr class="my-4">
+  <br/>
+<%= link_to 'Edit', edit_seller_path(@seller), class:"btn btn-secondary" %> |
+<%= link_to 'Back', sellers_path,class:"btn btn-dark" %>

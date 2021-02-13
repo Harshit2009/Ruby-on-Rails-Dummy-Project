@@ -1,0 +1,42 @@
+<%= form_with(model: seller, local: true) do |form| %>
+  <% if seller.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(seller.errors.count, "error") %> prohibited this seller from being saved:</h2>
+
+      <ul>
+      <% seller.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br>
+  <div class="field from-group">
+    <%= form.text_field :first_name, id: :seller_first_name,class:"form-control", placeholder:"First Name"  %>
+  </div>
+  <br>
+  <div class="field from-group">
+    <%= form.text_field :last_name, id: :seller_last_name,class:"form-control", placeholder:"Last Name"  %>
+  </div>
+  <br>
+  <div class="field from-group">
+    <%= form.text_field :phone, id: :seller_phone,class:"form-control", placeholder:"Phone Number"  %>
+  </div>
+  <br>
+  <div class="field from-group">
+    <%= form.text_field :email, id: :seller_email, class:"form-control", placeholder:"Email Id"  %>
+  </div>
+  <br>
+  <div class="field from-group">
+    <%= form.text_area :product_description, id: :seller_product_description, class:"form-control", placeholder:"Prdouct Description"  %>
+  </div>
+  <br>
+  <div class="field form-group">
+    <%= form.number_field :user_id, id: :seller_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit class:"btn btn-secondary" %>
+  </div>
+  <br>
+<% end %>
